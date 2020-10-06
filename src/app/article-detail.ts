@@ -1,5 +1,5 @@
 export interface ArticleDetail{
     id: number
-    articleId: number
+    article_id: number
     content: string
 }

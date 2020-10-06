@@ -1,1 +1,8 @@
-<p>articles works!</p>
+<ul>
+    <li *ngFor="let article of articles">
+        <a routerLink="/articles/{{article.id}}">
+            <h2>{{article.name}}</h2>
+        </a>
+        <p>{{article.description}}</p>
+    </li>
+</ul>
