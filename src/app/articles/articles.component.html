@@ -1,8 +1,12 @@
-<ul>
-    <li *ngFor="let article of articles">
-        <a routerLink="/articles/{{article.id}}">
-            <h2>{{article.name}}</h2>
+<div class="container-fluid">
+    <div class="list-group" *ngFor="let article of articles">
+        <a routerLink="/articles/{{article.id}}" class="list-group-item list-group-item-action mt-1 flex-column align-items-start">
+          <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">{{article.name}}</h5>
+            <small>{{article.created}}</small>
+          </div>
+          <p class="mb-1">{{article.description}}</p>
+          <small>{{article.keyWords}}</small>
         </a>
-        <p>{{article.description}}</p>
-    </li>
-</ul>
+      </div>
+</div>

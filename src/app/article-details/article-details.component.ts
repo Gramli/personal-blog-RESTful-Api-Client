@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { ArticleService } from '../article.service';
 import { ArticleDetail } from '../article-detail';
+import { Article } from '../article';
 
 @Component({
   selector: 'app-article-details',
@@ -11,6 +12,7 @@ import { ArticleDetail } from '../article-detail';
 })
 export class ArticleDetailsComponent implements OnInit {
 
+  article: Article;
   articleDetail: ArticleDetail;
 
   constructor(

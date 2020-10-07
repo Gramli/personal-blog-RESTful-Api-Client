@@ -8,7 +8,9 @@ import { AuthModule } from '@auth0/auth0-angular';
 import { AuthButtonComponent } from './auth-button/auth-button.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ArticlesComponent } from './articles/articles.component';
-import { ArticleDetailsComponent } from './article-details/article-details.component'
+import { ArticleDetailsComponent } from './article-details/article-details.component';
+import { HomeComponent } from './home/home.component';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { ArticleDetailsComponent } from './article-details/article-details.compo
     AuthButtonComponent,
     ProfileComponent,
     ArticlesComponent,
-    ArticleDetailsComponent
+    ArticleDetailsComponent,
+    HomeComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
