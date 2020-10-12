@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '@auth0/auth0-angular';
 import { ArticleService } from '../article.service';
-import { Article } from '../article';
+import { ArticleHeader } from '../articleHeader';
 
 @Component({
   selector: 'app-articles',
@@ -9,16 +10,16 @@ import { Article } from '../article';
 })
 export class ArticlesComponent implements OnInit {
 
-  articles: Article[];
+  articles: ArticleHeader[];
 
-  constructor(private articleService: ArticleService) { }
+  constructor(private articleService: ArticleService, public auth: AuthService) { }
 
   ngOnInit(): void {
     this.initArticles();
   }
 
   initArticles() : void {
-    this.articleService.getArticles().subscribe(articles=> this.articles = articles);
+    this.articleService.getArticleHeaders().subscribe(articles=> this.articles = articles);
   }
 
 }

@@ -1,13 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AuthService } from '@auth0/auth0-angular';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.css']
 })
-export class AppComponent {
-  title = 'personal-blog-RESTful-Api-Client';
+export class LoginComponent implements OnInit {
 
   constructor(public auth: AuthService) { }
 
@@ -20,4 +19,8 @@ export class AppComponent {
     returnTo: 'http://localhost:4200',
     });
   }
+
+  ngOnInit(): void {
+  }
+
 }

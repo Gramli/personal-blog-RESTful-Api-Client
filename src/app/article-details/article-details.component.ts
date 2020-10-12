@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { ArticleService } from '../article.service';
-import { ArticleDetail } from '../article-detail';
-import { Article } from '../article';
+import { ArticleContent } from '../article-Content';
+import { ArticleHeader } from '../articleHeader';
 
 @Component({
   selector: 'app-article-details',
@@ -12,8 +12,8 @@ import { Article } from '../article';
 })
 export class ArticleDetailsComponent implements OnInit {
 
-  article: Article;
-  articleDetail: ArticleDetail;
+  articleHeader: ArticleHeader;
+  articleContent: ArticleContent;
 
   constructor(
     private route: ActivatedRoute,
@@ -27,8 +27,11 @@ export class ArticleDetailsComponent implements OnInit {
 
   getArticleDetail(): void {
     const id = +this.route.snapshot.paramMap.get('id');
-    this.articleService.getArticleDetails(id)
-      .subscribe(ad => this.articleDetail = ad);
+    this.articleService.getArticle(id)
+      .subscribe(ad => {
+          this.articleContent = ad.articleContent; 
+          this.articleHeader = ad.articleHeader; 
+        });
   }
 
 }

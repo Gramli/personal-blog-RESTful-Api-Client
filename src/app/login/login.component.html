@@ -1,0 +1,10 @@
+<ng-container *ngIf="auth.isAuthenticated$ | async; else loggedOut">
+    <button class="btn btn-success" (click)="logout()">Log out</button>
+</ng-container>
+<ul *ngIf="auth.user$ | async as user">
+    <li>{{ user.name }}</li>
+    <li>{{ user.email }}</li>
+  </ul>
+<ng-template #loggedOut>
+    <button class="btn btn-success" (click)="auth.loginWithRedirect()">Log in</button>
+</ng-template>

@@ -1,12 +1,20 @@
 <div class="container-fluid">
     <div class="list-group" *ngFor="let article of articles">
-        <a routerLink="/articles/{{article.id}}" class="list-group-item list-group-item-action mt-1 flex-column align-items-start">
-          <div class="d-flex w-100 justify-content-between">
-            <h5 class="mb-1">{{article.name}}</h5>
-            <small>{{article.created}}</small>
-          </div>
-          <p class="mb-1">{{article.description}}</p>
-          <small>{{article.keyWords}}</small>
-        </a>
+      <div class="list-group-item list-group-item-action mt-1 flex-column align-items-start">
+      <button type="button" class="btn btn-default float-right" *ngIf="auth.isAuthenticated$ | async">
+        <img class="rounded float-right" width="32" src="../../assets/icons8_remove_32px.png"/>
+      </button>
+      <button type="button" class="btn btn-default float-right" *ngIf="auth.isAuthenticated$ | async">
+        <img class="rounded float-right" width="32" src="../../assets/icons8_edit_property_32px.png"/>
+      </button>
+          <a routerLink="/articles/{{article.id}}" class="list-group-item-action mt-1 flex-column align-items-start">
+            <div class="d-flex w-100 justify-content-between">
+              <h5 class="mb-1">{{article.name}}</h5>
+              <small>{{article.created}}</small>
+            </div>
+            <p class="mb-1">{{article.description}}</p>
+            <small>{{article.keyWords}}</small>
+          </a>
       </div>
+    </div>
 </div>

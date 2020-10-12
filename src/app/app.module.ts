@@ -5,22 +5,22 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthModule } from '@auth0/auth0-angular';
-import { AuthButtonComponent } from './auth-button/auth-button.component';
-import { ProfileComponent } from './profile/profile.component';
 import { ArticlesComponent } from './articles/articles.component';
 import { ArticleDetailsComponent } from './article-details/article-details.component';
 import { HomeComponent } from './home/home.component';
-import { AboutComponent } from './about/about.component';
+import { LoginComponent } from './login/login.component';
+import { AddArticleComponent } from './add-article/add-article.component';
+import { EditArticleComponent } from './edit-article/edit-article.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AuthButtonComponent,
-    ProfileComponent,
     ArticlesComponent,
     ArticleDetailsComponent,
     HomeComponent,
-    AboutComponent
+    LoginComponent,
+    AddArticleComponent,
+    EditArticleComponent,
   ],
   imports: [
     BrowserModule,
@@ -28,7 +28,7 @@ import { AboutComponent } from './about/about.component';
     HttpClientModule,
     AuthModule.forRoot({
       domain: 'dev-6zaf-em0.eu.auth0.com',
-      clientId: 'tU6f3mdFrEc1t1xQiA9qZ4KfXO3pvJwR'
+      clientId: 'FZnKYDS1wIIUzNozV6hxPAcTsVoD4ly9'
     }),
   ],
   providers: [],

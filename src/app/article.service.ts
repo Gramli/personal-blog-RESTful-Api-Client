@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
-import { Article } from './article'
-import { ArticleDetail } from './article-detail'
+import { ArticleHeader } from './articleHeader'
 import { Observable, of } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
+import { Article } from './article';
 
 @Injectable({
   providedIn: 'root'
@@ -14,16 +14,16 @@ export class ArticleService {
 
   constructor(private http: HttpClient) { }
 
-  getArticles() :Observable<Article[]> {
-    return this.http.get<Article[]>(this.blogUrl);
+  getArticleHeaders() :Observable<ArticleHeader[]> {
+    return this.http.get<ArticleHeader[]>(this.blogUrl);
   }
 
-  getArticleDetails(articleId) : Observable<ArticleDetail>{
+  getArticle(articleId) : Observable<Article>{
     const url = `${this.blogUrl}/${articleId}`
-    return this.http.get<ArticleDetail>(url)
+    return this.http.get<Article>(url)
     .pipe(
       tap(_ => console.info(`get article ok`)),
-      catchError(this.handleError<ArticleDetail>(`get article`, null))
+      catchError(this.handleError<Article>(`get article`, null))
     );
   }
 

@@ -11,14 +11,19 @@
       <li class="nav-item">
         <a class="nav-link" routerLink="/articles">Articles</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/about">About</a>
+      <li class="nav-item" *ngIf="auth.isAuthenticated$ | async;">
+        <a class="nav-link" routerLink="/addarticle">Add Articticle</a>
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
       <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
     </form>
+    <ng-container *ngIf="auth.isAuthenticated$ | async;">
+      <button class="btn btn-success" (click)="logout()">
+        Log out
+      </button>
+  </ng-container>
   </div>
 </nav>
 <router-outlet></router-outlet>
