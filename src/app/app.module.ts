@@ -11,6 +11,7 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { AddArticleComponent } from './add-article/add-article.component';
 import { EditArticleComponent } from './edit-article/edit-article.component';
+import {FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { EditArticleComponent } from './edit-article/edit-article.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
     AuthModule.forRoot({
       domain: 'dev-6zaf-em0.eu.auth0.com',
       clientId: 'FZnKYDS1wIIUzNozV6hxPAcTsVoD4ly9'
