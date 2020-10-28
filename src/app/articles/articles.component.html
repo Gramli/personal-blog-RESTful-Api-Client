@@ -1,7 +1,7 @@
 <div class="container-fluid">
     <div class="list-group" *ngFor="let article of articles">
       <div class="list-group-item list-group-item-action mt-1 flex-column align-items-start">
-      <button type="button" class="btn btn-default float-right" *ngIf="auth.isAuthenticated$ | async">
+      <button type="button" class="btn btn-default float-right" (click)="deleteArticle(article.id)" *ngIf="auth.isAuthenticated$ | async">
         <img class="rounded float-right" width="32" src="../../assets/icons8_remove_32px.png"/>
       </button>
       <button type="button" class="btn btn-default float-right" *ngIf="auth.isAuthenticated$ | async">

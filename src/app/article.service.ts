@@ -19,12 +19,17 @@ export class ArticleService {
   }
 
   getArticle(articleId) : Observable<Article>{
-    const url = `${this.blogUrl}/${articleId}`
+    const url = `${this.blogUrl}/${articleId}`;
     return this.http.get<Article>(url)
     .pipe(
       tap(_ => console.info(`get article ok`)),
       catchError(this.handleError<Article>(`get article`, null))
     );
+  }
+
+  deleteArticle(articleId){
+    const url = `http://localhost:9000/admin/delete/${articleId}`; //TODO FIX
+    return this.http.delete(url);
   }
 
   private handleError<T>(operation = 'operation', result?: T) {

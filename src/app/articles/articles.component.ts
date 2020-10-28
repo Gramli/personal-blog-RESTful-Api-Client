@@ -22,4 +22,8 @@ export class ArticlesComponent implements OnInit {
     this.articleService.getArticleHeaders().subscribe(articles=> this.articles = articles);
   }
 
+  deleteArticle(articleId) : void {
+    this.articleService.deleteArticle(articleId).subscribe(resposne => this.articles = this.articles.filter(item => item.id != articleId));
+  }
+
 }
